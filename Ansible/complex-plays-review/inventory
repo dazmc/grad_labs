@@ -17,4 +17,3 @@ ansible-1
 [emea:children]
 uk
 germany
-

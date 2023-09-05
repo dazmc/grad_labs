@@ -8,4 +8,4 @@
   #  filename: /home/ubuntu/INV_VAR.txt
 
   roles:
-  - precedence
+    - precedence

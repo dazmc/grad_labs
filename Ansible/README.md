@@ -29,7 +29,7 @@
 - ssh (or winrm) connection to target
 - gather facts (playbook)
 - playbook sent to target
-- playbook executes 
+- playbook executes
 
 ---
 
@@ -51,28 +51,29 @@
   ```yaml
   ansible-1 ansible_host=192.100.5 ansible_user=devops
   ```
+
 ---
 
 ## Ansible Terminology cont...
 
 - Play: execution of tasks against clients
-- Handler: task called when notified 
+- Handler: task called when notified
 
 ---
 
 ## ansible.cfg
 
 - determines how ansible will behave
-- specify location of inventory file 
+- specify location of inventory file
 - privilege escalation
 - private key location
 - ssh fine tuning
 - check configuration
   ```bash
   ansible-config list
-  ansible-config dump 
+  ansible-config dump
   ```
-  - output in orange default overriden 
+  - output in orange default overriden
 
 ---
 
@@ -80,12 +81,12 @@
 
 - examples
   ```bash
-  ansible all -m ansible.builtin.setup 
+  ansible all -m ansible.builtin.setup
   ansible all -m ansible.builtin.setup -a 'filter=ansible_*_mb'
   ansible web -m command -a "ls -l /etc/ansible/facts.d/"
   ansible web -m ansible.builtin.copy -a "src=/etc/hosts dest=/tmp/hosts"
   ansible web -m ansible.builtin.file -a "dest=/srv/foo/a.txt mode=600"
-  ansible ansible-1 -m ansible.builtin.yum -a "name=acme state=present" 
+  ansible ansible-1 -m ansible.builtin.yum -a "name=acme state=present"
   ansible all -m ansible.builtin.user -a "name=foo password=<crypted password here>"
   ansible webservers -m ansible.builtin.service -a "name=httpd state=started"
   ```
@@ -99,7 +100,7 @@
   - name: **This is a play in a playbook**
     hosts: web
     tasks:
-    - name: **This is a Task in a play** 
+    - name: **This is a Task in a play**
       # this is a module
       ansible.builtin.file:
         path: /tmp/testfile.txt
@@ -120,16 +121,17 @@
       state: touch
   ```
   - file: Ansible module used to create file
-  - state: what the end result should be for task 
+  - state: what the end result should be for task
 
 ---
 
 ## Playbook move to Roles
 
-  ```bash
-  mkdir roles
-  ansible-galaxy role init ./roles/package
-  ```
+```bash
+mkdir roles
+ansible-galaxy role init ./roles/package
+```
+
 - copy tasks from playbook to roles/role_name/tasks folder
 - copy vars from playbook to roles/role_name/vars or defaults folder
 - copy handler from playbook to roles/role_name/handles folder
@@ -150,7 +152,7 @@
       - package
       - index
   ```
-> better to use include_role or import_role than role
+  > better to use include_role or import_role than role
 
 ---
 
@@ -171,7 +173,7 @@
 - RBAC Access
 - Model complex Business processes
 - License Required (AWX is upstream)
-- Scale automation beyond single engineer 
+- Scale automation beyond single engineer
 - Moving to Container based execution
 
 **This is what we will see**

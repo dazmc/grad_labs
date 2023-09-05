@@ -1,6 +1,5 @@
 # Grad Labs
 
-
 ---
 
 ## Ansible

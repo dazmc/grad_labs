@@ -9,16 +9,16 @@
 - THERE ARE OTHERS - in order - https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#ansible-variable-precedence
 
 command line values (for example, -u my_user, these are not variables)
-role defaults (defined in role/defaults/main.yml) 
-inventory file or script group vars 
-inventory group_vars/all 
-playbook group_vars/all 
-inventory group_vars/* 
-playbook group_vars/* 
-inventory file or script host vars 
-inventory host_vars/* 
-playbook host_vars/* 
-host facts / cached set_facts 
+role defaults (defined in role/defaults/main.yml)
+inventory file or script group vars
+inventory group_vars/all
+playbook group_vars/all
+inventory group_vars/*
+playbook group_vars/*
+inventory file or script host vars
+inventory host_vars/*
+playbook host_vars/*
+host facts / cached set_facts
 play vars
 play vars_prompt
 play vars_files

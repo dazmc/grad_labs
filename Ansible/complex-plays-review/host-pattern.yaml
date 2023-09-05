@@ -5,6 +5,6 @@
   #become: true
 
   tasks:
-  - name: filter facts
-    debug:
-      msg: This is a fact "{{ansible_facts['fqdn']}}"
+    - name: filter facts
+      debug:
+        msg: This is a fact "{{ansible_facts['fqdn']}}"
