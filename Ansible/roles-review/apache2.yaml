@@ -5,11 +5,13 @@
       apt:
         name: apache2
         state: present
+
     - name: correct index.html is present
       copy:
         src: files/index.html
         dest: /var/www/html/index.html
         mode: 0644
+
     - name: httpd is started
       service:
         name: apache2
